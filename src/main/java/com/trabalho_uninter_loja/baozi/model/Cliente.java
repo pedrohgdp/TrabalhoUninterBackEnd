@@ -14,7 +14,7 @@ public class Cliente {
 
     private String nome;
 
-    private LocalDate clienteDesde;
+    private LocalDate cliente_desde;
 
     public Long getId() {
         return id;
@@ -33,11 +33,11 @@ public class Cliente {
     }
 
     public LocalDate getClienteDesde() {
-        return clienteDesde;
+        return cliente_desde;
     }
 
     public void setClienteDesde(LocalDate clienteDesde) {
-        this.clienteDesde = clienteDesde;
+        this.cliente_desde = clienteDesde;
     }
 
     @Override
@@ -45,7 +45,7 @@ public class Cliente {
         return "Cliente{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
-                ", clienteDesde=" + clienteDesde +
+                ", cliente desde de =" + cliente_desde +
                 '}';
     }
 }

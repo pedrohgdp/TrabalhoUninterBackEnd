@@ -11,29 +11,29 @@ import java.util.List;
 @RequestMapping("/pedidos")
 public class PedidoController {
 
-    private final PedidoRepository repository;
+    private final PedidoRepository pedido_repository;
 
     public PedidoController(PedidoRepository repository) {
-        this.repository = repository;
+        this.pedido_repository = repository;
     }
 
     @PostMapping
     public Pedido criar(@RequestBody Pedido pedido) {
-        return repository.save(pedido);
+        return pedido_repository.save(pedido);
     }
 
     @GetMapping
     public List<Pedido> listar() {
-        return repository.findAll();
+        return pedido_repository.findAll();
     }
 
     @GetMapping("/{id}")
     public Pedido buscar(@PathVariable Long id) {
-        return repository.findById(id).orElse(null);
+        return pedido_repository.findById(id).orElse(null);
     }
 
     @DeleteMapping("/{id}")
     public void deletar(@PathVariable Long id) {
-        repository.deleteById(id);
+        pedido_repository.deleteById(id);
     }
 }

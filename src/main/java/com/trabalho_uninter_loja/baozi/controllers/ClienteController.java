@@ -10,29 +10,29 @@ import java.util.List;
 @RequestMapping("/clientes")
 public class ClienteController {
 
-    private final ClienteRepository repository;
+    private final ClienteRepository cliente_repository;
 
     public ClienteController(ClienteRepository repository) {
-        this.repository = repository;
+        this.cliente_repository = repository;
     }
 
     @PostMapping
     public Cliente criar(@RequestBody Cliente cliente) {
-        return repository.save(cliente);
+        return cliente_repository.save(cliente);
     }
 
     @GetMapping
     public List<Cliente> listar() {
-        return repository.findAll();
+        return cliente_repository.findAll();
     }
 
     @GetMapping("/{id}")
     public Cliente buscar(@PathVariable Long id) {
-        return repository.findById(id).orElse(null);
+        return cliente_repository.findById(id).orElse(null);
     }
 
     @DeleteMapping("/{id}")
     public void deletar(@PathVariable Long id) {
-        repository.deleteById(id);
+        cliente_repository.deleteById(id);
     }
 }
